@@ -23,6 +23,10 @@ public class carsForSalePage extends CommonMethods {
     @FindBy(xpath="//*[@id=\"mountNode\"]/header/div/nav/div[3]/ul/li[2]/a")
     public WebElement sellYourCar;
 
+    @FindBy(xpath="//*[@id=\"app\"]/header/div/nav/div[3]/ul/li[3]/a")
+    public WebElement priceQuate;
+
+
 
 
     public carsForSalePage() {

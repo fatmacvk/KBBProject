@@ -20,16 +20,21 @@ public class carsForSales extends CommonMethods {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.carsForSaleSubmenu);
         Thread.sleep(2000);
-        actionClass(carsForSaleTitle.carsForSaleMenuHover);
-        Thread.sleep(1000);
+
     }
 
     @And("I click the sell your car")
-    public void i_click_the_sell_your_car() {
+    public void i_click_the_sell_your_car() throws InterruptedException {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.sellYourCar);
         driver.manage().deleteAllCookies();
-    }
 
+    }
+    @And("I click the free dealers price quate")
+    public void i_click_the_free_dealers_price_quate() {
+        driver.manage().deleteAllCookies();
+        jsClick(carsForSaleTitle.priceQuate);
+        driver.manage().deleteAllCookies();
+    }
 
 }
