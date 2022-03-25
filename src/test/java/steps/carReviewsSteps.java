@@ -7,55 +7,55 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 public class carReviewsSteps extends CommonMethods {
-    @When("I hover on {string}")
-    public void i_hover_on(String string) throws InterruptedException {
-        //actionClass(carReviewsTitle.carReviews);
+    @When("I hover on Car reviews")
+    public void i_hover_on() throws InterruptedException {
+        actionClass(carReviewsTitle.carReviews);
         Thread.sleep(1000);
 
     }
 
     @And("I click the new user guide")
     public void i_click_the_new_user_guide() throws InterruptedException {
+        driver.manage().deleteAllCookies();
         jsClick(carReviewsTitle.newUserGuide);
-        Thread.sleep(1000);
-        //actionClass(carReviewsTitle.carReviews);
+        Thread.sleep(2000);
+
     }
 
     @And("I click the experts review")
     public void i_click_the_experts_review() throws InterruptedException {
-       // actionClass(carReviewsTitle.carReviews);
+       actionClass(carReviewsTitle.carReviewAfterClick);
+        driver.manage().deleteAllCookies();
         jsClick(carReviewsTitle.expertsReview);
-        //carReviewHover();
+        Thread.sleep(2000);
     }
 
-    /*
+
 
     @And("I click the electric vehicle")
     public void i_click_the_electric_vehicle() throws InterruptedException {
+        //actionClass(carReviewsTitle.carReviewAfterClick);
+        driver.manage().deleteAllCookies();
         jsClick(carReviewsTitle.electricVehicle);
-        carReviewHover();
+        Thread.sleep(2000);
     }
 
     @And("I click awards")
     public void i_click_awards() throws InterruptedException {
+        driver.manage().deleteAllCookies();
         jsClick(carReviewsTitle.awards);
-        carReviewHover();
+        Thread.sleep(2000);
     }
 
     @And("I click latest news")
-    public void i_click_latest_news() {
+    public void i_click_latest_news() throws InterruptedException {
+        driver.manage().deleteAllCookies();
         jsClick(carReviewsTitle.latestNews);
+        Thread.sleep(2000);
 
     }
-*/
-
-    public void carReviewHover() throws InterruptedException {
-        Thread.sleep(3000);
-       // actionClass(carReviewsTitle.carReviews);
-        Thread.sleep(1000);
 
 
-    }
 
 }
 

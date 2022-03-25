@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 public class carValuesSteps extends CommonMethods {
     @When("I hover over {string}")
     public void i_hover_over(String string) throws InterruptedException {
-        //actionClass(carValuesTitle.carValues);
+        actionClass(carValuesTitle.carValues);
         Thread.sleep(2000);
 
 
