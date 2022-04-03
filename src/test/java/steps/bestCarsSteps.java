@@ -15,27 +15,58 @@ import java.util.List;
 
 public class bestCarsSteps extends CommonMethods {
 
-    @When("I hover the {string}")
-    public void i_hover_over(String string) throws InterruptedException {
+    @When("user hover the CarReviews")
+    public void user_hover_the_car_reviews() throws InterruptedException {
         actionClass(bestCarsTitle.carReviews);
         Thread.sleep(2000);
 
     }
-    @And("I click the best cars")
-    public void i_click_the_best_cars() throws InterruptedException {
+    @And("user click the best cars")
+    public void user_click_the_best_cars() throws InterruptedException {
         driver.manage().deleteAllCookies();
         Thread.sleep(2000);
         click(bestCarsTitle.bestCars);
         Thread.sleep(2000);
 
     }
-    @Then("I list each best compact car")
-    public void i_click_see_the_list() throws InterruptedException {
+    @And("user click the See Lists button")
+    public void user_click_the_See_Lists_button() throws InterruptedException {
         driver.manage().deleteAllCookies();
-        System.out.println("BEST COMPACT CARS");
+        Thread.sleep(2000);
+        click(bestCarsTitle.seeTheList);
+        Thread.sleep(2000);
+
+    }
+    @And("user click the {string} and the best compact {string}")
+    public void userClickTheAndTheBestCompact(String number, String car) throws InterruptedException {
 
 
-        List<WebElement> listElement = driver.findElements(By.xpath("//*[@id=\"primaryLists\"]/div/div[1]/div/div[1]/div/div/div[1]/div/div/div/a/h3"));
+        driver.manage().deleteAllCookies();
+        List<WebElement> listElement = (List<WebElement>) bestCarsTitle.Mercedes;
+        for (int i = 0; i < listElement.size(); i++) {
+            String elementText = listElement.get(i).getText();
+            System.out.println("1-" + elementText);
+
+            click(bestCarsTitle.Mercedes);
+
+            driver.manage().deleteAllCookies();
+
+            driver.navigate().back();
+
+            Thread.sleep(3000);
+
+            driver.manage().deleteAllCookies();
+
+
+    }
+
+//    @Then("the top three best compact cars is displayed successfully.")
+//    public void the_top_three_best_compact_cars_is_displayed_successfully() {
+//
+//    }
+
+}}
+/*  List<WebElement> listElement = driver.findElements(By.xpath("//*[@id=\"primaryLists\"]/div/div[1]/div/div[1]/div/div/div[1]/div/div/div/a/h3"));
         for (int i = 0; i < listElement.size(); i++) {
             String elementText = listElement.get(i).getText();
             System.out.println("1-" + elementText);
@@ -75,12 +106,9 @@ public class bestCarsSteps extends CommonMethods {
 
                 click(bestCarsTitle.MercedesC);
 
-
                 Thread.sleep(5000);
 
                 driver.navigate().back();
-
-
             }
-        }
-    }}
+
+        } */

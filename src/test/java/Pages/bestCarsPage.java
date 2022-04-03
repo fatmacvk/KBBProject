@@ -28,6 +28,7 @@ public class bestCarsPage extends CommonMethods {
         public WebElement MercedesC;
 
     public bestCarsPage() {
+
         PageFactory.initElements(driver, this);
     }
 
