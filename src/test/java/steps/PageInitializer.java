@@ -1,9 +1,6 @@
 package steps;
 
-import Pages.bestCarsPage;
-import Pages.carReviewsPage;
-import Pages.carValuesPages;
-import Pages.carsForSalePage;
+import Pages.*;
 
 public class PageInitializer {
 
@@ -12,6 +9,8 @@ public class PageInitializer {
         public static carReviewsPage carReviewsTitle;
         public static bestCarsPage bestCarsTitle;
         public static carsForSalePage carsForSaleTitle;
+        public static carRepairPage carsRepairTitle;
+        public static myKBBPage myKBBTitle;
 
 
         public static void initializePageObjects() {
@@ -19,6 +18,8 @@ public class PageInitializer {
             carReviewsTitle=new  carReviewsPage();
             bestCarsTitle=new bestCarsPage();
             carsForSaleTitle=new carsForSalePage();
+            carsRepairTitle=new carRepairPage();
+            myKBBTitle = new myKBBPage();
         }
     }
 

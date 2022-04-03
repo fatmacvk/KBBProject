@@ -17,6 +17,7 @@ public class carValuesPages extends CommonMethods {
     @FindBy(xpath="//*[@id=\"content\"]/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/label[2]/div/div/div/div")
     public WebElement searchPriceButton;
 
+    ///Degisiklik
     public carValuesPages() {
         PageFactory.initElements(driver, this);
     }
