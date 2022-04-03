@@ -5,7 +5,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+
 
 public class myKBBSteps extends CommonMethods {
     @Given("user click MyKBB icon")
