@@ -6,7 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 
-public class carsForSales extends CommonMethods {
+public class carsForSalesSteps extends CommonMethods {
 
 
     @When("I hover on the cars for sale menu")
@@ -31,10 +31,26 @@ public class carsForSales extends CommonMethods {
 
     }
     @And("I click the free dealers price quate")
-    public void i_click_the_free_dealers_price_quate() {
+    public void i_click_the_free_dealers_price_code() {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.priceQuate);
         driver.manage().deleteAllCookies();
     }
+
+    @And("I click the vehicle history report")
+    public void i_click_the_vehicle_history_report() {
+        driver.manage().deleteAllCookies();
+        jsClick(carsForSaleTitle.historyReport);
+        driver.manage().deleteAllCookies();
+    }
+
+
+    @And("I click the find local dealers")
+    public void i_click_the_find_local_dealers() {
+        driver.manage().deleteAllCookies();
+        jsClick(carsForSaleTitle.localDealers);
+        driver.manage().deleteAllCookies();
+    }
+
 
 }
