@@ -74,6 +74,7 @@ public class bestCarsPage extends CommonMethods {
 
 
     public bestCarsPage() {
+
         PageFactory.initElements(driver, this);
     }
 

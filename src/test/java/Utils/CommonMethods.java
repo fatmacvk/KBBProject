@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -43,6 +44,7 @@ public class CommonMethods extends PageInitializer {
                 throw new RuntimeException("Invalid browser name");
         }
 
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.get(ConfigsReader.getPropertyValue("url"));
         driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
@@ -61,14 +63,14 @@ public class CommonMethods extends PageInitializer {
 
     public static void actionClass(WebElement element) {
         Actions action = new Actions(driver);
-        action.moveToElement(element).perform();
+        action.moveToElement(element);
+        action.click().build().perform();
     }
 
     public static WebDriverWait getWait(){
         WebDriverWait wait = new WebDriverWait(driver, Constants.EXPLICIT_WAIT);
         return wait;
     }
-
 
     public static void waitForClickability(WebElement element){
         getWait().until(ExpectedConditions.elementToBeClickable(element));

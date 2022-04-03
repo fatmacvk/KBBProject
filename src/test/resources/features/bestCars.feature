@@ -22,4 +22,3 @@ Feature:Best Cars
     And I verify the first best fullsize car
     And I verify the second fullsize car
     And I verify the third fullsize car
-
