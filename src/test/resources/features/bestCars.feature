@@ -1,21 +1,24 @@
 Feature:Best Cars
 
-  Background: chrome testing
+  @regression
+  Scenario: Verifying the best cars
+    When I hover the 'CarReviews'
+    And I click the best cars
+    And I verify the first compact car
+    And I verify the second compact car
+    And I verify the third compact car
 
-@regression
-  Scenario Outline: Verifying the best cars
+  Scenario: best convertible cars
+    When I hover on 'CarReviews'
+    And I click the best cars to see convertible cars
+    And I verify the first convertible car
+    And I verify the second convertible car
+    And I verify the third convertible car
 
+  Scenario: best fullsize cars
 
-    When user hover the CarReviews
-    And user click the best cars
-    And user click the See Lists button
-    And user click the "<number>" and the best compact "<car>"
-#    Then the top three best compact cars is displayed successfully.
-    Examples:
-    | number | car |
-    | first| 2022 Mercedes-Benz A-Class |
-#    | second| 2022 Honda Civic|
-#    | third| 2022 Mercedes-Benz C-Class|
-
-
-
+    When I hover on 'CarReviews' for fullsize car
+    And I click the best cars to see fullsize cars
+    And I verify the first best fullsize car
+    And I verify the second fullsize car
+    And I verify the third fullsize car

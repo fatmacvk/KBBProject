@@ -55,6 +55,11 @@ public class CommonMethods extends PageInitializer {
         element.clear();
         element.sendKeys(textToSend);
     }
+    public static void scrollDown(int pixel) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0," + pixel + ")");
+    }
+
 
     public static void actionClass(WebElement element) {
         Actions action = new Actions(driver);
