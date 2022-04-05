@@ -12,8 +12,12 @@ public class carRepairPage extends CommonMethods {
 
     @FindBy(xpath="//div[@id='app']/header/div/nav/div[5]/ul/li[1]/a")
     public WebElement autoRepair;
+    @FindBy(xpath = "//div[@id='content']/div[2]/div/div[1]/div[1]/div/div/div/form/div[1]/div/select")
+    public WebElement selectByYear;
+    @FindBy(xpath= "//div[@id='content']/div[2]/div/div[1]/div[1]/div/div/div/form/div[2]/div")
+    public WebElement selectByMake;
 
-    @FindBy(xpath="//*[@id=\"app\"]/header/div/nav/div[5]/ul/li[2]/a")
+    @FindBy(xpath="/html/body/div[2]/div/header/div/nav/div[5]/ul/li[2]/a")
     public WebElement carRecalls;
 
     @FindBy(xpath="//div[@id='app']/header/div/nav/div[5]/ul/li[3]/a")

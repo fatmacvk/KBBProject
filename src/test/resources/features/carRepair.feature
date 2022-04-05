@@ -3,16 +3,15 @@ Feature:Car Repair
   Background: chrome testing
 
   @regression
-  Scenario Outline: Verifying the carRepair
+  Scenario: Verifying the carRepair
 
-    Given user hoover over CarRepair to click "<Submenus>"
-#    Then "Submenu" is displayed successfully
-   Examples:
-     |Submenus|
-     |Auto Repair Prices|
-     |Car Recalls|
-     |Mainte|
-#      |  Find an Auto Shop|
-#      |  Service & Repair Guide|
-#      |  OBD-II Codes|
+    Given user hoover over CarRepair
+    And user click Auto Repair Prices
+    And user click Car Recalls
+    And user click Mainte
+    And user click Find an Auto Shop
+    And user click Service & Repair Guide
+    And user click OBD-II Codes
+
+
 
