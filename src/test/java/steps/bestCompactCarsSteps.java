@@ -18,6 +18,7 @@ public class bestCompactCarsSteps extends CommonMethods {
     public void i_hover_over(String string) throws InterruptedException {
         actionClass(bestCarsTitle.carReviews);
         Thread.sleep(2000);
+        driver.manage().deleteAllCookies();
     }
     @And("I click the best cars")
     public void i_click_the_best_cars() throws InterruptedException {

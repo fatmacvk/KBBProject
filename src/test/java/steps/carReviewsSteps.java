@@ -17,7 +17,7 @@ public class carReviewsSteps extends CommonMethods {
     @And("I click the new user guide")
     public void i_click_the_new_user_guide() throws InterruptedException {
         driver.manage().deleteAllCookies();
-        jsClick(carReviewsTitle.newUserGuide);
+        click(carReviewsTitle.newUserGuide);
         Thread.sleep(2000);
 
     }
