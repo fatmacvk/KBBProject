@@ -10,14 +10,16 @@ public class reserachToolSteps extends CommonMethods{
 
         @When("I hover on the research tools")
         public void i_hover_on_the_research_tools() throws InterruptedException {
+            driver.manage().deleteAllCookies();
             actionClass(reserachToolsTitle.researchTools);
-            Thread.sleep(1000);
+            driver.manage().deleteAllCookies();
         }
 
     @When("I click the car research")
     public void i_click_the_car_research() throws InterruptedException {
-        driver.manage().deleteAllCookies();
-        jsClick(reserachToolsTitle.researchTools);
+
+        Thread.sleep(1000);
+        jsClick(reserachToolsTitle.carResearch);
         Thread.sleep(2000);
 
     }

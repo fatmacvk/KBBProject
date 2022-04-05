@@ -13,6 +13,7 @@ public class carsForSalesSteps extends CommonMethods {
     public void i_hover_on_the_cars_for_sale_menu() throws InterruptedException {
         actionClass(carsForSaleTitle.carsForSaleMenu);
         Thread.sleep(1000);
+        driver.manage().deleteAllCookies();
     }
 
     @And("I click the cars for sale")

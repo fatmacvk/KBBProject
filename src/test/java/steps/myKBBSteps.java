@@ -2,68 +2,63 @@ package steps;
 
 import Utils.CommonMethods;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
 
 public class myKBBSteps extends CommonMethods {
-    @Given("user click MyKBB icon")
-    public void user_click_my_kbb_icon() {
+    @Given("user click MyKBB icon and user click on Signin button")
+
+    public void user_click_my_kbb_icon() throws InterruptedException {
         driver.manage().deleteAllCookies();
         jsClick(myKBBTitle.myKBBIcon);
-    }
-
-    @When("user click on Signin button")
-    public void user_click_on_signin_button() {
         click(myKBBTitle.firstSignInButton);
+        Thread.sleep(3000);
     }
 
-   @When("user enters valid email and password")
-    public void user_enters_valid_email_and_password() {
-       sendText(myKBBTitle.emailInfo, "ummuhangenc14@gmail.com");
-       sendText(myKBBTitle.password, "MyKBBProject2022*");
-       driver.manage().deleteAllCookies();
+    @When("user enters valid email and password")
+    public void user_enters_valid_email_and_password() throws InterruptedException {
+        driver.manage().deleteAllCookies();
+        sendText(myKBBTitle.emailInfo, "ummuhangenc14@gmail.com");
+        Thread.sleep(2000);
+        sendText(myKBBTitle.Password, "MyKBBProject2022*");
+        Thread.sleep(2000);
 
 
-//        driver.manage().deleteAllCookies();
-//
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("document.getElementById('input').value='ummuhangenc14@gmail.com';");
-//        js.executeScript("document.getElementById('password').value='MyKBBProject2022*';");
-//        driver.manage().deleteAllCookies();
-   }
+        driver.manage().deleteAllCookies();
+    }
 
     @When("user click Signin button to see its account")
     public void user_click_signin_button_to_see_its_account() throws InterruptedException {
         driver.manage().deleteAllCookies();
-      // click(myKBBTitle.secondSignInButton);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("document.getElementById('sign-in-form').click();");
+        click(myKBBTitle.secondSignInButton);
         Thread.sleep(2000);
+
     }
+
     @Then("user is successfully logged in")
     public void userIsSuccessfullyLoggedIn() {
-    System.out.println("Welcome to myKBB");
+        System.out.println("Welcome to myKBB");
     }
 
-   @And("user enters invalid {string} and {string}")
-   public void userEntersInvalidAnd(String Email, String Password) {
-//
-//
-      sendText(myKBBTitle.emailInfo, Email);
-       sendText(myKBBTitle.password, Password);
-       driver.manage().deleteAllCookies();
-//
-////        JavascriptExecutor js = (JavascriptExecutor) driver;
-////        js.executeScript("document.getElementById('input').value='ummuhangenc14@gmail.com';");
-////        js.executeScript("document.getElementById('password').value='MyKBBProject2022*';");
-//    }
-//
-//    @Then("user see {string}")
-//    public void userSee(String ErrorMessage) {
-//        String errmsg=myKBBTitle.errorMessage.getText();
-//        System.out.println("actual error----"+errmsg);
-//        System.out.println("expected-----"+ErrorMessage);
-//        Assert.assertEquals("Error message is not displayed", errmsg,ErrorMessage );
-//    }
+    @And("user enters invalid {string} and {string} and clicks on login and verify the {string}")
+    public void user_enters_invalid_and_and_clicks_on_login_and_verify_the(String string, String string2, String string3) throws InterruptedException {
+        driver.manage().deleteAllCookies();
+        sendText(myKBBTitle.emailInfo, string);
+        sendText(myKBBTitle.Password, string2);
+        jsClick(myKBBTitle.secondSignInButton);
 
-}}
+        Thread.sleep(2000);
+
+        /*String errorActual = myKBBTitle.errorMessage1.getText();
+        Assert.assertEquals(string3, errorActual);
+
+        String errorActual2 = myKBBTitle.errorMessage2.getText();
+        Assert.assertEquals(string3, errorActual2);
+*/
+
+
+    }
+
+}
