@@ -4,15 +4,8 @@ import Utils.CommonMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -57,7 +50,7 @@ public class carRepairSteps extends CommonMethods {
     @And("user click Service & Repair Guide")
     public void user_click_service_repair_guide() throws InterruptedException {
         driver.manage().deleteAllCookies();
-        jsClick(carsRepairTitle.serviceGuide);
+        jsClick(carsRepairTitle.selectService);
         Thread.sleep(1000);
     }
 
@@ -67,14 +60,65 @@ public class carRepairSteps extends CommonMethods {
         jsClick(carsRepairTitle.obdIICodes);
         Thread.sleep(1000);
     }
+    @When("user select the year for a vehicle auto repair prices")
+    public void user_select_the_year_for_a_vehicle_auto_repair_prices() throws InterruptedException {
 
-    @Then("user verify all submenu is displayed successfully")
-    public void userVerifyAllSubmenuIsDisplayedSuccessfully() {
+        driver.manage().deleteAllCookies();
+        selectDropddownValue(carsRepairTitle.Year, "2022");
+        Thread.sleep(2000);
+    }
 
-        String actualStringforAuto = driver.findElement(By.xpath("//div[@id='content']/div[1]/div/div/div/div[3]/div/div/div/div/h1")).getText();
-        String expectedString = "ExpectedString";
-        assertTrue(actualStringforAuto.contains(expectedString));
+    @When("user select the model for a vehicle auto repair prices")
+    public void user_select_the_model_for_a_vehicle_auto_repair_prices() throws InterruptedException {
+        selectDropddownValue(carsRepairTitle.Make, "Chevrolet");
+        Thread.sleep(2000);
+    }
+
+    @When("user select the make for a vehicle auto repair prices")
+    public void user_select_the_make_for_a_vehicle_auto_repair_prices() throws InterruptedException {
+        driver.manage().deleteAllCookies();
+        selectDropddownValue(carsRepairTitle.Model, "Blazer");
+        Thread.sleep(2000);
+    }
+
+    @When("user select the style for a vehicle auto repair prices")
+    public void user_select_the_style_for_a_vehicle_auto_repair_prices() throws InterruptedException {
+        selectDropddownValue(carsRepairTitle.Style, "2LT Sport Utility 4D");
+        Thread.sleep(2000);
+    }
+
+    @When("user click save button")
+    public void user_click_save_button() throws InterruptedException {
+        driver.manage().deleteAllCookies();
+        jsClick(carsRepairTitle.SaveButton);
+        Thread.sleep(2000);
+    }
+    @When("user select a Service or Repair from the menu")
+    public void user_select_a_service_or_repair_from_the_menu() throws InterruptedException {
+        driver.manage().deleteAllCookies();
+        jsClick(carsRepairTitle.serviceGuide);
+        driver.manage().deleteAllCookies();
+        sendText(carsRepairTitle.serviceGuide, "AC Compressor Replacement");
+        Thread.sleep(2000);
 
     }
+
+    @When("user click See Price button")
+    public void user_click_see_price_button() throws InterruptedException{
+        driver.manage().deleteAllCookies();
+        jsClick(carsRepairTitle.SeePricing);
+        Thread.sleep(3000);
+    }
+
+    @Then("user verify the Fair Repair Range for Auto Repair")
+    public void user_verify_the_fair_repair_range_for_auto_repair() throws InterruptedException {
+        driver.manage().deleteAllCookies();
+        String actualStringforfairrepair = driver.findElement(By.xpath("//h2[text()='Chevrolet Auto Repair Near Me']")).getText();
+        String expectedString = "Chevrolet Auto Repair Near Me";
+        assertTrue(actualStringforfairrepair.contains(expectedString));
+        Thread.sleep(2000);
+    }
+
+
 
 }

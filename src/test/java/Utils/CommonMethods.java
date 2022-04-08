@@ -95,8 +95,29 @@ public class CommonMethods extends PageInitializer {
     public static void selectDropdown(WebElement element, String text){
         Select s= new Select(element);
         s.selectByVisibleText(text);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+    public static void selectDropddownValue(WebElement element, String visibleText) {
+        Select select = new Select(element);
+        List<WebElement> options = select.getOptions();
 
+        boolean isFound = false;
+        for (WebElement option : options) {
+            if (option.getText().equals(visibleText)) {
+                select.selectByVisibleText(visibleText);
+                isFound = true;
+                break;
+            }
+        }
+
+        if (!isFound) {
+            System.out.println("Value " + visibleText + "was not found in the dropdown");
+        }
+    }
 
     //screenshot method
     public static byte[] takeScreenshot(String fileName){
