@@ -97,6 +97,19 @@ public class CommonMethods extends PageInitializer {
         s.selectByVisibleText(text);
     }
 
+    public void dismissAlert(WebElement element){
+       try{element.click();
+           System.out.println("Waiting for alert");
+           WebDriverWait wait=new WebDriverWait(driver,10);
+           wait.until(ExpectedConditions.alertIsPresent()).dismiss();
+           System.out.println("alert displayed");
+           Thread.sleep(1000);
+
+       } catch (Exception e) {
+           System.out.println("alert is not displayed");
+       }
+    }
+
 
     //screenshot method
     public static byte[] takeScreenshot(String fileName){

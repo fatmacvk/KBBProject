@@ -19,8 +19,9 @@ public class myKBBPage extends CommonMethods {
     @FindBy(xpath="//*[@id=\"password\"]")
     public WebElement Password;
 
-    @FindBy(xpath="//*[@id=\"sign-in-form\"]/div[4]")
+    @FindBy(xpath="//button[@type='submit']")
     public WebElement secondSignInButton;
+
 
     @FindBy(xpath = "//div[@id='mountNode']/div[1]/div[1]/div/div/div/div/div[1]/div/div/div/h1")
     public WebElement verifyMessage;
@@ -31,8 +32,11 @@ public class myKBBPage extends CommonMethods {
     @FindBy(xpath="//*[@id=\"mountNode\"]/div[1]/div[2]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div[2]/div")
     public WebElement errorMessage2;
 
+    @FindBy(xpath="/html/body/div[6]/div[2]/div")
+    public WebElement popup;
 
-
+    @FindBy(xpath="/html/body/div[6]/div[2]/div/div[1]/button")
+    public WebElement popupexit;
 
 
     public myKBBPage(){

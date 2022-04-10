@@ -43,6 +43,21 @@ public class researchToolsPage extends CommonMethods {
     @FindBy(xpath = "//*[@id=\"navToResearchToolsnavToRecalls\"]")
     public WebElement recall;
 
+    @FindBy(xpath = "//*[@id=\"app\"]/div[2]/div[3]/div/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div[2]/form/div[1]/div/select")
+    public WebElement yearResearch;
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[2]/div[3]/div/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div[2]/form/div[2]/div/select")
+    public WebElement makeResearch;
+
+    @FindBy(xpath = " //*[@id=\"minimum-price\"]/select")
+    public WebElement minResearch;
+
+    @FindBy(xpath = "//*[@id=\"max-price\"]/select")
+    public WebElement maxResearch;
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[4]/div/div/div/div/div/div/div/div[2]/div/div/div/div[5]/a")
+    public WebElement resultResearch;
+
 
     public researchToolsPage() {
         PageFactory.initElements(driver, this);
