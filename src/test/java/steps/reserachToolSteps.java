@@ -15,14 +15,6 @@ public class reserachToolSteps extends CommonMethods{
             driver.manage().deleteAllCookies();
         }
 
-    @When("I click the car research")
-    public void i_click_the_car_research() throws InterruptedException {
-
-        Thread.sleep(1000);
-        jsClick(reserachToolsTitle.carResearch);
-        Thread.sleep(2000);
-
-    }
 
     @And("I click the car finder")
     public void i_click_the_car_finder() throws InterruptedException {
