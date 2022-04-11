@@ -67,6 +67,12 @@ public class CommonMethods extends PageInitializer {
         action.click().build().perform();
     }
 
+    public static void actionClass1(WebElement element) {
+        Actions action = new Actions(driver);
+        action.moveToElement(element).build().perform();
+
+    }
+
     public static WebDriverWait getWait(){
         WebDriverWait wait = new WebDriverWait(driver, Constants.EXPLICIT_WAIT);
         return wait;

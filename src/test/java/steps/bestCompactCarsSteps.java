@@ -16,7 +16,8 @@ public class bestCompactCarsSteps extends CommonMethods {
 
     @When("I hover the {string}")
     public void i_hover_over(String string) throws InterruptedException {
-        actionClass(bestCarsTitle.carReviews);
+        driver.manage().deleteAllCookies();
+        actionClass1(bestCarsTitle.carReviews);
         Thread.sleep(2000);
         driver.manage().deleteAllCookies();
     }
@@ -26,6 +27,11 @@ public class bestCompactCarsSteps extends CommonMethods {
         Thread.sleep(2000);
         click(bestCarsTitle.bestCars);
         Thread.sleep(2000);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
     }
     @And("I verify the first compact car")
     public void i_verify_the_first_compact_car() throws InterruptedException {

@@ -20,8 +20,12 @@ public class reserachToolSteps extends CommonMethods{
     public void i_click_the_car_finder() throws InterruptedException {
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.carFinder);
-        driver.manage().deleteAllCookies();
         Thread.sleep(1000);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
     }
 
     @And("I click the compare cars")
@@ -29,6 +33,11 @@ public class reserachToolSteps extends CommonMethods{
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.compareCars);
         Thread.sleep(2000);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
     }
 
 
@@ -37,6 +46,7 @@ public class reserachToolSteps extends CommonMethods{
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.vehicleHistoryReport);
         Thread.sleep(2000);
+
     }
 
     @And("I click the car values")
@@ -44,12 +54,14 @@ public class reserachToolSteps extends CommonMethods{
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.carValues);
         Thread.sleep(2000);
+
     }
 
     @And("I click the car loans")
     public void i_click_the_car_loans() throws InterruptedException {
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.carLoans);
+
         Thread.sleep(2000);
     }
 
@@ -57,13 +69,14 @@ public class reserachToolSteps extends CommonMethods{
     public void i_click_the_insurance() throws InterruptedException {
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.insurance);
+
         Thread.sleep(2000);
     }
 
     @And("I click the check my credit")
     public void i_click_the_check_my_credit() throws InterruptedException {
         driver.manage().deleteAllCookies();
-        jsClick(reserachToolsTitle.checkMyCredit);
+
         Thread.sleep(2000);
     }
 
@@ -72,6 +85,7 @@ public class reserachToolSteps extends CommonMethods{
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.extendedWarranty);
         Thread.sleep(2000);
+
     }
 
     @Then("I click the recalls")
@@ -79,6 +93,11 @@ public class reserachToolSteps extends CommonMethods{
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.recall);
         Thread.sleep(2000);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
     }
 
 }

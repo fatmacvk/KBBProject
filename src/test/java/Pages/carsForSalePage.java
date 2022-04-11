@@ -31,7 +31,7 @@ public class carsForSalePage extends CommonMethods {
     @FindBy(xpath="//*[@id=\"app\"]/header/div/nav/div[3]/ul/li[4]/a")
     public WebElement historyReport;
 
-    @FindBy(xpath="//*[@id=\"td-outer-wrap\"]/div/div[1]/div[2]/div[1]")
+    @FindBy(id="navToCarsforSalenavToFindLocalDealers")
     public WebElement localDealers;
 
     @FindBy(xpath="//*[@id=\"makeDropdown\"]/select")
