@@ -14,10 +14,11 @@ Feature:My KBB
 
 
   Scenario Outline: invalid username and password
-    When user enters invalid "<username>" and "<password>" and clicks on login and verify the "<errorMessage>"
+    When user enters invalid "<username>" and "<password>" and clicks on login
 
     Examples:
       | username                | password          |
+      |                         | MyKBBProject2022* |
       | ummuhangenc14@gmail.com | MyKBBProject2022  |
       | ummuhangenc14@gmail.co  | MyKBBProject2022* |
-      | ummuhangenc14@gmail.com |                   |
+
