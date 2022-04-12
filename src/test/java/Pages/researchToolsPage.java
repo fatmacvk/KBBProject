@@ -9,7 +9,7 @@ public class researchToolsPage extends CommonMethods {
 
 
 
-    @FindBy(xpath="//*[@id=\"app\"]/header/div/nav/div[6]/a")
+    @FindBy(xpath="//div[@id='app']/header/div/nav/div[6]/a")
     public WebElement researchTools;
 
     @FindBy(xpath = "//*[@id=\"app\"]/header/div/nav/div[6]/ul/li[1]/a")
@@ -25,13 +25,13 @@ public class researchToolsPage extends CommonMethods {
     @FindBy(xpath = "//*[@id=\"app\"]/header/div/nav/div[6]/ul/li[4]/a")
     public WebElement vehicleHistoryReport;
 
-    @FindBy(xpath = "//*[@id=\"navToResearchToolsnavToCarValues\"]")
-    public WebElement carValues;
+    @FindBy(xpath = "//div[@id='app']/header/div/nav/div[6]/ul/li[5]/a")
+    public WebElement carValuess;
 
     @FindBy(xpath = "//*[@id=\"app\"]/header/div/nav/div[6]/ul/li[6]/a")
     public WebElement carLoans;
 
-    @FindBy(xpath = "//*[@id=\"navToResearchToolsnavToInsurance\"]")
+    @FindBy(xpath = "//header[@id='desktopGlobalHeader']//parent::a[@id='navToResearchToolsnavToInsurance']")
     public WebElement insurance;
 
     @FindBy(xpath = "//*[@id=\"navToResearchToolsnavToCheckMyCredit\"]")
@@ -57,6 +57,22 @@ public class researchToolsPage extends CommonMethods {
 
     @FindBy(xpath = "//*[@id=\"app\"]/div[4]/div/div/div/div/div/div/div/div[2]/div/div/div/div[5]/a")
     public WebElement resultResearch;
+
+    @FindBy(xpath = "//*[@id=\"ajaxsearchlite1\"]/div/div[3]/form/input[1]")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//div[@id='makeDropdown']/select")
+    public WebElement makeSelect;
+    @FindBy(xpath = "//div[@id='modelDropdown']/select")
+    public WebElement modelSelect;
+    @FindBy(xpath = "//div[@id='trimDropdown']/select")
+    public WebElement trimSelect;
+    @FindBy(xpath = "//input[@id='zipInput']")
+    public WebElement zipCode;
+    @FindBy(xpath = "//button[@id='Step1Button']/span")
+    public WebElement FindDealers;
+    @FindBy(xpath = "//*[@id='priceQuoteIframe']/iframe")
+    public WebElement iFrame;
 
 
     public researchToolsPage() {
