@@ -27,9 +27,9 @@ public class bestCompactCarsSteps extends CommonMethods {
         Thread.sleep(2000);
         click(bestCarsTitle.bestCars);
         Thread.sleep(2000);
-        if(myKBBTitle.popup.isDisplayed()){
+        if (myKBBTitle.popup.isDisplayed()) {
             jsClick(myKBBTitle.popupexit);
-        }else{
+        } else {
             System.out.println("popup is not displayed");
         }
     }

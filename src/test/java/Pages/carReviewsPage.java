@@ -28,8 +28,6 @@ public class carReviewsPage extends CommonMethods {
     @FindBy(xpath = "//*[@id=\"vehicle_card_1\"]/div[2]/div[1]/div/div/a/h2")
     public WebElement toyota2022;
 
-
-
     @FindBy(xpath= "//*[@id=\"navToElectricVehiclesGuidenavToElectricVehiclesGuide\"]")
     public WebElement electricVehicle;
 

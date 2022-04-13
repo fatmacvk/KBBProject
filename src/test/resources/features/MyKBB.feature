@@ -12,7 +12,7 @@ Feature:My KBB
     Then user is successfully logged in
 
 
-
+  @smoke
   Scenario Outline: invalid username and password
     When user enters invalid "<username>" and "<password>" and clicks on login
 

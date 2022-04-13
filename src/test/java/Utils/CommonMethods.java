@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-//command+o--> for mac to see all methods within the class
-//ctrl+o--> for windows
 public class CommonMethods extends PageInitializer {
 
     public static WebDriver driver;
@@ -97,27 +95,35 @@ public class CommonMethods extends PageInitializer {
         getJSExecutor().executeScript("arguments[0].click();", element);
     }
 
-    //for dropdown selection using text
+
     public static void selectDropdown(WebElement element, String text){
         Select s= new Select(element);
         s.selectByVisibleText(text);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void selectDropddownValue(WebElement element, String visibleText) {
+        Select select = new Select(element);
+        List<WebElement> options = select.getOptions();
+
+        boolean isFound = false;
+        for (WebElement option : options) {
+            if (option.getText().equals(visibleText)) {
+                select.selectByVisibleText(visibleText);
+                isFound = true;
+                break;
+            }
+        }
+
+        if (!isFound) {
+            System.out.println("Value " + visibleText + "was not found in the dropdown");
+        }
     }
 
-    public void dismissAlert(WebElement element){
-       try{element.click();
-           System.out.println("Waiting for alert");
-           WebDriverWait wait=new WebDriverWait(driver,10);
-           wait.until(ExpectedConditions.alertIsPresent()).dismiss();
-           System.out.println("alert displayed");
-           Thread.sleep(1000);
 
-       } catch (Exception e) {
-           System.out.println("alert is not displayed");
-       }
-    }
-
-
-    //screenshot method
     public static byte[] takeScreenshot(String fileName){
         TakesScreenshot ts = (TakesScreenshot) driver;
         byte[] picBytes = ts.getScreenshotAs(OutputType.BYTES);

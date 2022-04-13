@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class bestCarsPage extends CommonMethods {
 
+
+//compact cars
     @FindBy(xpath = "//*[@id=\"app\"]/header/div/nav/div[4]/a")
     public WebElement carReviews;
 
@@ -27,8 +29,7 @@ public class bestCarsPage extends CommonMethods {
     @FindBy(xpath = "//*[@id=\"primaryLists\"]/div/div[1]/div/div[1]/div/div/div[2]/div/a[2]/div/div/p[2]")
     public WebElement MercedesC;
 
-//CONVERTABLE CARS
-
+//convertible cars
 
     @FindBy(xpath = "//*[@id=\"primaryLists\"]/div/div[1]/div/div[2]/div/div/div[1]/div/div/div/a/h3")
     public WebElement Mazda;
@@ -50,7 +51,6 @@ public class bestCarsPage extends CommonMethods {
 
 
 
-
     @FindBy(xpath = "//*[@id=\"primaryLists\"]/div/div[1]/div/div[3]/div/div/div[2]/div/a[1]/div/div/p[2]")
     public WebElement audiA7;
 
@@ -59,19 +59,6 @@ public class bestCarsPage extends CommonMethods {
 
     @FindBy(xpath = "//*[@id=\"primaryLists\"]/div/div[1]/div/div[3]/div/div/div[1]/div/div/div/a/h3")
     public WebElement MercedesBenzSFullsize;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public bestCarsPage() {
 
