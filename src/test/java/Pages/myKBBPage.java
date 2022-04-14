@@ -22,7 +22,6 @@ public class myKBBPage extends CommonMethods {
     @FindBy(xpath="//button[@type='submit']")
     public WebElement secondSignInButton;
 
-
     @FindBy(xpath = "//div[@id='mountNode']/div[1]/div[1]/div/div/div/div/div[1]/div/div/div/h1")
     public WebElement verifyMessage;
 

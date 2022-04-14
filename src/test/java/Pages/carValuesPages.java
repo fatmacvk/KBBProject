@@ -35,7 +35,6 @@ public class carValuesPages extends CommonMethods {
     public WebElement Nextbutton;
 
 
-
     public carValuesPages() {
         PageFactory.initElements(driver, this);
     }

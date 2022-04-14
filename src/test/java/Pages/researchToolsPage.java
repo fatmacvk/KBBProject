@@ -18,7 +18,6 @@ public class researchToolsPage extends CommonMethods {
     @FindBy(xpath = "//*[@id=\"app\"]/header/div/nav/div[6]/ul/li[2]/a")
     public WebElement carFinder;
 
-
     @FindBy(xpath = "//*[@id=\"app\"]/header/div/nav/div[6]/ul/li[3]/a")
     public WebElement compareCars;
 
@@ -63,14 +62,19 @@ public class researchToolsPage extends CommonMethods {
 
     @FindBy(xpath = "//div[@id='makeDropdown']/select")
     public WebElement makeSelect;
+
     @FindBy(xpath = "//div[@id='modelDropdown']/select")
     public WebElement modelSelect;
+
     @FindBy(xpath = "//div[@id='trimDropdown']/select")
     public WebElement trimSelect;
+
     @FindBy(xpath = "//input[@id='zipInput']")
     public WebElement zipCode;
+
     @FindBy(xpath = "//button[@id='Step1Button']/span")
     public WebElement FindDealers;
+
     @FindBy(xpath = "//*[@id='priceQuoteIframe']/iframe")
     public WebElement iFrame;
 

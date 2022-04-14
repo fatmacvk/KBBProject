@@ -2,7 +2,7 @@ Feature:Car Repair
 
   Background: chrome testing
 
-  @regression
+  @carTag
   Scenario: Verifying the carRepair submenus
 
     Given user hoover over CarRepair
@@ -15,7 +15,7 @@ Feature:Car Repair
 
 
 
-  @regression
+  @carTag
   Scenario: Verifying the Auto Repair menus
 
     Given user hoover over CarRepair

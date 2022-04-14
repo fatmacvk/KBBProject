@@ -1,5 +1,6 @@
 Feature:new User Guide
 
+    @sanity
   Scenario: Verifying new user guide
 
 

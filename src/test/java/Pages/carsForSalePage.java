@@ -15,15 +15,11 @@ public class carsForSalePage extends CommonMethods {
     @FindBy(xpath="//*[@id=\"mountNode\"]/header/div/nav/div[3]/a")
     public WebElement carsForSaleMenuHover;
 
-
-
     @FindBy(xpath="//*[@id=\"app\"]/header/div/nav/div[3]/ul/li[1]/a")
     public WebElement carsForSaleSubmenu;
 
     @FindBy(xpath="//*[@id=\"mountNode\"]/header/div/nav/div[3]/ul/li[2]/a")
     public WebElement sellYourCar;
-
-
 
     @FindBy(xpath="//*[@id=\"app\"]/header/div/nav/div[3]/ul/li[3]/a")
     public WebElement priceQuate;
@@ -31,7 +27,7 @@ public class carsForSalePage extends CommonMethods {
     @FindBy(xpath="//*[@id=\"app\"]/header/div/nav/div[3]/ul/li[4]/a")
     public WebElement historyReport;
 
-    @FindBy(xpath="//*[@id=\"td-outer-wrap\"]/div/div[1]/div[2]/div[1]")
+    @FindBy(id="navToCarsforSalenavToFindLocalDealers")
     public WebElement localDealers;
 
     @FindBy(xpath="//*[@id=\"makeDropdown\"]/select")
@@ -42,7 +38,6 @@ public class carsForSalePage extends CommonMethods {
 
     @FindBy(xpath="//*[@id=\"makeDropdown\"]/select/option[2]")
     public WebElement acura;
-
 
     @FindBy(xpath="//*[@id=\"2225141853\"]")
     public WebElement zipcode;
@@ -58,17 +53,6 @@ public class carsForSalePage extends CommonMethods {
 
     @FindBy(xpath="//*[@id=\"payments-popover-menu\"]/div[2]/div/button[1]")
     public WebElement notNow;
-
-
-
-
-
-
-
-
-
-
-
 
 
     public carsForSalePage() {

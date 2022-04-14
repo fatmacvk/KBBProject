@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-//command+o--> for mac to see all methods within the class
-//ctrl+o--> for windows
 public class CommonMethods extends PageInitializer {
 
     public static WebDriver driver;
@@ -67,6 +65,12 @@ public class CommonMethods extends PageInitializer {
         action.click().build().perform();
     }
 
+    public static void actionClass1(WebElement element) {
+        Actions action = new Actions(driver);
+        action.moveToElement(element).build().perform();
+
+    }
+
     public static WebDriverWait getWait(){
         WebDriverWait wait = new WebDriverWait(driver, Constants.EXPLICIT_WAIT);
         return wait;
@@ -91,7 +95,7 @@ public class CommonMethods extends PageInitializer {
         getJSExecutor().executeScript("arguments[0].click();", element);
     }
 
-    //for dropdown selection using text
+
     public static void selectDropdown(WebElement element, String text){
         Select s= new Select(element);
         s.selectByVisibleText(text);
@@ -119,7 +123,7 @@ public class CommonMethods extends PageInitializer {
         }
     }
 
-    //screenshot method
+
     public static byte[] takeScreenshot(String fileName){
         TakesScreenshot ts = (TakesScreenshot) driver;
         byte[] picBytes = ts.getScreenshotAs(OutputType.BYTES);

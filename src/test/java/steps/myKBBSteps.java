@@ -16,8 +16,7 @@ public class myKBBSteps extends CommonMethods {
         jsClick(myKBBTitle.myKBBIcon);
         Thread.sleep(2000);
         jsClick(myKBBTitle.firstSignInButton);
-
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     @When("user enters valid email and password")
@@ -60,14 +59,6 @@ public class myKBBSteps extends CommonMethods {
         sendText(myKBBTitle.Password, password);
         jsClick(myKBBTitle.secondSignInButton);
         Thread.sleep(2000);
-
-        /*String errorActual = myKBBTitle.errorMessage1.getText();
-        Assert.assertEquals(string3, errorActual);
-
-        String errorActual2 = myKBBTitle.errorMessage2.getText();
-        Assert.assertEquals(string3, errorActual2);
-*/
-
 
     }
 

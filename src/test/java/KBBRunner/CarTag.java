@@ -1,10 +1,8 @@
 package KBBRunner;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -18,5 +16,5 @@ import org.junit.runner.RunWith;
         ,tags= "@regression"
 
 )
-public class Regression {
+public class CarTag {
 }

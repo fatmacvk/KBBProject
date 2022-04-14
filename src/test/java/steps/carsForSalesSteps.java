@@ -27,17 +27,29 @@ public class carsForSalesSteps extends CommonMethods {
         drpCar.selectByVisibleText("75 Miles");
         Thread.sleep(2000);
         sendText(carsForSaleTitle.driver.findElement(By.xpath("//*[@id=\"2225141853\"]")),"29334");
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
         Thread.sleep(2000);
     }
 
     @And("I choose max and min year")
     public void i_choose_max_and_min_year() throws InterruptedException {
         scrollDown(200);
+
         Select minYear = new Select(driver.findElement(By.id("614960940")));
         minYear.selectByVisibleText("2005");
 
         Select maxYear = new Select(driver.findElement(By.id("2152820002")));
         maxYear.selectByVisibleText("2017");
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
+
 
     }
     @And("I choose the used cars and get the good deal")
@@ -58,6 +70,11 @@ public class carsForSalesSteps extends CommonMethods {
         Thread.sleep(2000);
         jsClick(carsForSaleTitle.sellYourCar);
         Thread.sleep(2000);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
         driver.manage().deleteAllCookies();
 
     }
@@ -65,15 +82,22 @@ public class carsForSalesSteps extends CommonMethods {
     public void i_click_the_free_dealers_price_code() {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.priceQuate);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
         driver.manage().deleteAllCookies();
 
     }
 
 
     @And("I click the vehicle history report")
-    public void i_click_the_vehicle_history_report() {
+    public void i_click_the_vehicle_history_report() throws InterruptedException {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.historyReport);
+        Thread.sleep(1000);
+
         driver.manage().deleteAllCookies();
     }
 
@@ -82,6 +106,11 @@ public class carsForSalesSteps extends CommonMethods {
     public void i_click_the_find_local_dealers() {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.localDealers);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
         driver.manage().deleteAllCookies();
     }
 

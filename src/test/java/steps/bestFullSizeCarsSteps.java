@@ -11,7 +11,8 @@ import static steps.PageInitializer.bestCarsTitle;
 public class bestFullSizeCarsSteps {
     @When("I hover on {string} for fullsize car")
     public void i_hover_on(String string) throws InterruptedException {
-        actionClass(bestCarsTitle.carReviews);
+        driver.manage().deleteAllCookies();
+        actionClass1(bestCarsTitle.carReviews);
         Thread.sleep(2000);
     }
 
@@ -22,6 +23,11 @@ public class bestFullSizeCarsSteps {
         click(bestCarsTitle.bestCars);
         scrollDown(700);
         Thread.sleep(2000);
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+        }else{
+            System.out.println("popup is not displayed");
+        }
     }
 
 

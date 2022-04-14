@@ -1,9 +1,8 @@
 Feature:research tools
 
 
-
+  @carTag
   Scenario: Verifying the research tools
-
 
     When I hover on the research tools
     And I click the car finder
@@ -16,7 +15,7 @@ Feature:research tools
     And I click the extended warranty
     Then I click the recalls
 
-  @tag
+  @carTag
   Scenario: Verifying New Car Price Quote
 
     When I hover on the research tools
