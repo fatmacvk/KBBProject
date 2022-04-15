@@ -52,7 +52,7 @@ public class reserachToolSteps extends CommonMethods{
     @And("I click the car values")
     public void i_click_the_car_values() throws InterruptedException {
         driver.manage().deleteAllCookies();
-        jsClick(reserachToolsTitle.carValues);
+        jsClick(reserachToolsTitle.carValueMenu);
         Thread.sleep(2000);
 
     }

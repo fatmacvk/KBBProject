@@ -10,13 +10,14 @@ public class myKBBPage extends CommonMethods {
     @FindBy(xpath="//div[@id='app']/header/div/div[2]/label")
     public WebElement myKBBIcon;
 
-    @FindBy(xpath="//div[@id='app']/header/div/div[2]/div/div/a[1]")
+  //  @FindBy(xpath="//div[@id='app']/header/div/div[2]/div/div/a[1]")
+    @FindBy(xpath = "//a[text()='Sign In']")
     public WebElement firstSignInButton;
 
-    @FindBy(xpath="//*[@id=\"input\"]")
+    @FindBy(xpath="//input[@id='input']")
     public WebElement emailInfo;
 
-    @FindBy(xpath="//*[@id=\"password\"]")
+    @FindBy(xpath="//*[@id='password']")
     public WebElement Password;
 
     @FindBy(xpath="//button[@type='submit']")
