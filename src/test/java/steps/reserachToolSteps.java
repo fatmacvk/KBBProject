@@ -4,6 +4,9 @@ import Utils.CommonMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+
+import static org.junit.Assert.assertTrue;
 
 public class reserachToolSteps extends CommonMethods{
 
@@ -99,6 +102,48 @@ public class reserachToolSteps extends CommonMethods{
             System.out.println("popup is not displayed");
         }
     }
+    @When("I click the car research")
+    public void i_click_the_car_research() {
+       jsClick(reserachToolsTitle.carResearch);
+    }
+
+    @When("I select make to a new car")
+    public void i_select_make_to_a_new_car() {
+        if(reserachToolsTitle.popup.isDisplayed()) {
+            jsClick(reserachToolsTitle.popupexit);
+        }
+            driver.switchTo().frame(reserachToolsTitle.iFrame);
+        selectDropdown(reserachToolsTitle.makeSelect, "Acura");
+    }
+
+    @When("I select model the car")
+    public void i_select_model_the_car() {
+        selectDropdown(reserachToolsTitle.modelSelect, "ILX");
+    }
+
+    @When("I select trim the car")
+    public void i_select_trim_the_car() {
+            selectDropdown(reserachToolsTitle.trimSelect, "Premium Pkg");
+
+    }
+
+    @When("I enter the zipcode")
+    public void i_enter_the_zipcode() {
+    sendText(reserachToolsTitle.zipCode, "32092");
+    }
+
+    @When("I click the findDealer button")
+    public void i_click_the_find_dealer_button() {
+    jsClick(reserachToolsTitle.FindDealers);
+    }
+
+    @Then("I verify the closest dealer")
+    public void i_verify_the_closest_dealer() {
+        String actualStringforResearch= driver.findElement(By.xpath("//div[@id='dealerInfo0']/div[2]/p[1]/b")).getText();
+        String expectedString = "Acura Of Orange Park";
+        assertTrue(actualStringforResearch.contains(expectedString));
+    }
+
 
 }
 

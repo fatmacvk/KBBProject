@@ -15,9 +15,10 @@ Feature:My KBB
   Scenario Outline: invalid username and password
     When user enters invalid "<username>" and "<password>"
     And user clicks Signin button
+    Then user see "<error message>"
     Examples:
-      | username                | password          |
-      |                         | MyKBBProject2022* |
-      | ummuhangenc14@gmail.com | MyKBBProject2022  |
-#      | ummuhangenc14@gmail.co  | MyKBBProject2022* |
+      | username                | password          |error message  |
+      |                         | MyKBBProject2022* |Username cannot be empty|
+      | ummuhangenc14@gmail.com | MyKBBProject2022  |Invalid Credential      |
+#      | ummuhangenc14@gmail.co  | MyKBBProject2022* |Invalid Credential |
 
