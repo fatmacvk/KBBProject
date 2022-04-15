@@ -2,34 +2,32 @@ package steps;
 
 import Utils.CommonMethods;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
 
 
 public class myKBBSteps extends CommonMethods {
-    @Given("user click MyKBB icon and user click on Signin button")
-
-    public void user_click_my_kbb_icon() throws InterruptedException {
+    @Given("user click MyKBB icon and user click on firstSignin button")
+    public void user_click_my_kbb_icon_and_user_click_on_first_signin_button()  throws InterruptedException {
 
         driver.manage().deleteAllCookies();
         jsClick(myKBBTitle.myKBBIcon);
         Thread.sleep(2000);
         jsClick(myKBBTitle.firstSignInButton);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
     }
 
     @When("user enters valid email and password")
     public void user_enters_valid_email_and_password() throws InterruptedException {
+        driver.manage().deleteAllCookies();
         if(myKBBTitle.popup.isDisplayed()){
             jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
+//        }else{
+//            System.out.println("popup is not displayed");
         }
         sendText(myKBBTitle.emailInfo, "ummuhangenc14@gmail.com");
         Thread.sleep(2000);
         sendText(myKBBTitle.Password, "MyKBBProject2022*");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
     }
 
@@ -47,19 +45,21 @@ public class myKBBSteps extends CommonMethods {
         Thread.sleep(1000);
     }
 
-    @And("user enters invalid {string} and {string} and clicks on login")
-    public void user_enters_invalid_and_and_clicks_on_login_and_verify_the(String username, String password) throws InterruptedException {
+    @When("user enters invalid {string} and {string}")
+    public void userEntersInvalidAnd(String username, String password) throws InterruptedException {
         driver.manage().deleteAllCookies();
         if(myKBBTitle.popup.isDisplayed()){
             jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
+//        }else{
+//            System.out.println("popup is not displayed");
         }
         sendText(myKBBTitle.emailInfo, username);
         sendText(myKBBTitle.Password, password);
-        jsClick(myKBBTitle.secondSignInButton);
-        Thread.sleep(2000);
+        Thread.sleep(6000);
 
     }
-
+    @And("user clicks Signin button")
+    public void userClicksSigninButton() {
+        jsClick(myKBBTitle.secondSignInButton);
+    }
 }

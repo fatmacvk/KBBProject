@@ -25,7 +25,7 @@ public class researchToolsPage extends CommonMethods {
     public WebElement vehicleHistoryReport;
 
     @FindBy(xpath = "//div[@id='app']/header/div/nav/div[6]/ul/li[5]/a")
-    public WebElement carValuess;
+    public WebElement carValueMenu;
 
     @FindBy(xpath = "//*[@id=\"app\"]/header/div/nav/div[6]/ul/li[6]/a")
     public WebElement carLoans;
