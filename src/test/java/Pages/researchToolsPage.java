@@ -77,6 +77,11 @@ public class researchToolsPage extends CommonMethods {
 
     @FindBy(xpath = "//*[@id='priceQuoteIframe']/iframe")
     public WebElement iFrame;
+    @FindBy(xpath="/html/body/div[6]/div[2]/div")
+    public WebElement popup;
+
+    @FindBy(xpath="/html/body/div[6]/div[2]/div/div[1]/button")
+    public WebElement popupexit;
 
 
     public researchToolsPage() {

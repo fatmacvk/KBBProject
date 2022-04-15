@@ -2,7 +2,7 @@ package steps;
 
 import Utils.CommonMethods;
 import io.cucumber.java.en.*;
-
+import org.junit.Assert;
 
 
 public class myKBBSteps extends CommonMethods {
@@ -48,11 +48,11 @@ public class myKBBSteps extends CommonMethods {
     @When("user enters invalid {string} and {string}")
     public void userEntersInvalidAnd(String username, String password) throws InterruptedException {
         driver.manage().deleteAllCookies();
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
+//        if(myKBBTitle.popup.isDisplayed()){
+//            jsClick(myKBBTitle.popupexit);
 //        }else{
 //            System.out.println("popup is not displayed");
-        }
+  //      }
         sendText(myKBBTitle.emailInfo, username);
         sendText(myKBBTitle.Password, password);
         Thread.sleep(6000);
@@ -61,5 +61,15 @@ public class myKBBSteps extends CommonMethods {
     @And("user clicks Signin button")
     public void userClicksSigninButton() {
         jsClick(myKBBTitle.secondSignInButton);
+    }
+
+    @Then("user see {string}")
+    public void userSee(String errMessage) {
+        String errorMsg=myKBBTitle.errorMessage1.getText();
+        System.out.println("actual error---" +errorMsg);
+        System.out.println("expected error---" +errMessage);
+        Assert.assertEquals("Error message is not displayed", errorMsg,errMessage);
+
+
     }
 }
