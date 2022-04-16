@@ -64,12 +64,21 @@ public class myKBBSteps extends CommonMethods {
     }
 
     @Then("user see {string}")
-    public void userSee(String errMessage) {
+    public void userSee(String errMessage) throws InterruptedException {
         String errorMsg=myKBBTitle.errorMessage1.getText();
         System.out.println("actual error---" +errorMsg);
         System.out.println("expected error---" +errMessage);
         Assert.assertEquals("Error message is not displayed", errorMsg,errMessage);
-
+        Thread.sleep(2000);
+        String errorMsg2=myKBBTitle.errorMessage2.getText();
+        System.out.println("actual error---" +errorMsg2);
+        System.out.println("expected error---" +errMessage);
+        Assert.assertEquals("Error message is not displayed", errorMsg2,errMessage);
+        Thread.sleep(2000);
+        String errorMsg3=myKBBTitle.errorMessage3.getText();
+        System.out.println("actual error---" +errorMsg3);
+        System.out.println("expected error---" +errMessage);
+        Assert.assertEquals("Error message is not displayed", errorMsg3,errMessage);
 
     }
 }
