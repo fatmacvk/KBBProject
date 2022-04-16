@@ -18,7 +18,7 @@ Feature:My KBB
     Then user see "<error message>"
     Examples:
       | username                | password          |error message  |
-      |                         | MyKBBProject2022* |Username cannot be empty|
-      | ummuhangenc14@gmail.com | MyKBBProject2022  |Invalid Credential      |
-#      | ummuhangenc14@gmail.co  | MyKBBProject2022* |Invalid Credential |
+      |                         | MyKBBProject2022* |This field is required.|
+      | ummuhangenc14@gmail.com | MyKBBProject2022  |Sorry, we recognize your email address but not your password. Did you forget your password?  |
+      | ummuhangenc14@gmail.co  | MyKBBProject2022* |Sorry, we don't recognize that email address. Please try another email address or use one of the third-party accounts to sign in. |
 
