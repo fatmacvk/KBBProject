@@ -15,10 +15,9 @@ Feature:My KBB
   Scenario Outline: invalid username and password
     When user enters invalid "<username>" and "<password>"
     And user clicks Signin button
-    Then user see "<error message>"
+    Then user are still on the login page
     Examples:
-      | username                | password          |error message  |
-      |                         | MyKBBProject2022* |This field is required.|
-      | ummuhangenc14@gmail.com | MyKBBProject2022  |Sorry, we recognize your email address but not your password. Did you forget your password?  |
-      | ummuhangenc14@gmail.co  | MyKBBProject2022* |Sorry, we don't recognize that email address. Please try another email address or use one of the third-party accounts to sign in. |
-
+      | username                | password          |
+      |                         | MyKBBProject2022* |
+      | ummuhangenc14@gmail.com | MyKBBProject2022  |
+      | ummuhangenc14@gmail.co  | MyKBBProject2022* |
