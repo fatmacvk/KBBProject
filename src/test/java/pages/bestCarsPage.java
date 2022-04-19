@@ -1,4 +1,4 @@
-package pages;
+package Pages;
 
 
 import utility.CommonMethods;
