@@ -1,13 +1,8 @@
 package steps;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import Utils.CommonMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
+import utility.CommonMethods;
 
 import static org.junit.Assert.assertEquals;
 
@@ -27,11 +22,7 @@ public class bestCompactCarsSteps extends CommonMethods {
         Thread.sleep(2000);
         click(bestCarsTitle.bestCars);
         Thread.sleep(2000);
-        if (myKBBTitle.popup.isDisplayed()) {
-            jsClick(myKBBTitle.popupexit);
-        } else {
-            System.out.println("popup is not displayed");
-        }
+
     }
     @And("I verify the first compact car")
     public void i_verify_the_first_compact_car() throws InterruptedException {
@@ -44,17 +35,19 @@ public class bestCompactCarsSteps extends CommonMethods {
 
     }
     @And("I verify the second compact car")
-    public void i_verify_the_second_compact_car() {
+    public void i_verify_the_second_compact_car() throws InterruptedException {
         String expectedName = "2022 Honda Civic";
         String actual = bestCarsTitle.Honda.getText();
         System.out.println("Second compact car: " + actual);
         assertEquals(expectedName, actual);
+        Thread.sleep(2000);
     }
 
     @And("I verify the third compact car")
-    public void i_verify_the_third_compact_car() {
+    public void i_verify_the_third_compact_car() throws InterruptedException {
         String expectedName = "2022 Mercedes-Benz C-Class";
         String actual = bestCarsTitle.MercedesC.getText();
         System.out.println("Third compact car: " + actual);
         assertEquals(expectedName, actual);
+        Thread.sleep(2000);
     }}

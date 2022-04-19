@@ -1,6 +1,6 @@
 package steps;
 
-import Utils.CommonMethods;
+import utility.CommonMethods;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -27,11 +27,7 @@ public class carsForSalesSteps extends CommonMethods {
         drpCar.selectByVisibleText("75 Miles");
         Thread.sleep(2000);
         sendText(carsForSaleTitle.driver.findElement(By.xpath("//*[@id=\"2225141853\"]")),"29334");
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
+
         Thread.sleep(2000);
     }
 
@@ -44,13 +40,7 @@ public class carsForSalesSteps extends CommonMethods {
 
         Select maxYear = new Select(driver.findElement(By.id("2152820002")));
         maxYear.selectByVisibleText("2017");
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
-
-
+        Thread.sleep(1000);
     }
     @And("I choose the used cars and get the good deal")
     public void i_choose_the_used_cars() throws InterruptedException {
@@ -58,7 +48,7 @@ public class carsForSalesSteps extends CommonMethods {
         //click(carsForSaleTitle.usedCarCheck);
         Thread.sleep(2000);
         String price=carsForSaleTitle.dealPrice.getText();
-        System.out.println(price);
+        System.out.println("I verified the price of used car "+price);
     }
 
 
@@ -70,11 +60,7 @@ public class carsForSalesSteps extends CommonMethods {
         Thread.sleep(2000);
         jsClick(carsForSaleTitle.sellYourCar);
         Thread.sleep(2000);
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
+
         driver.manage().deleteAllCookies();
 
     }
@@ -82,11 +68,7 @@ public class carsForSalesSteps extends CommonMethods {
     public void i_click_the_free_dealers_price_code() {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.priceQuate);
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
+
         driver.manage().deleteAllCookies();
 
     }
@@ -106,11 +88,7 @@ public class carsForSalesSteps extends CommonMethods {
     public void i_click_the_find_local_dealers() {
         driver.manage().deleteAllCookies();
         jsClick(carsForSaleTitle.localDealers);
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
+
         driver.manage().deleteAllCookies();
     }
 

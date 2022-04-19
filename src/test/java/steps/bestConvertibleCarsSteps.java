@@ -3,7 +3,7 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
-import static Utils.CommonMethods.*;
+import static utility.CommonMethods.*;
 import static org.junit.Assert.assertEquals;
 import static steps.PageInitializer.bestCarsTitle;
 
@@ -23,11 +23,7 @@ public class bestConvertibleCarsSteps {
         click(bestCarsTitle.bestCars);
         scrollDown(400);
         Thread.sleep(2000);
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
+
     }
 
 
@@ -42,11 +38,12 @@ public class bestConvertibleCarsSteps {
 
     }
     @And("I verify the second convertible car")
-    public void i_verify_the_second_convertible_car() {
+    public void i_verify_the_second_convertible_car() throws InterruptedException {
         String expectedName = "2021 Mercedes-Benz S-Class";
         String actual = bestCarsTitle.MercedesBenzS.getText();
         System.out.println("Second convertible car: " + actual);
         assertEquals(expectedName, actual);
+        Thread.sleep(2000);
     }
 
     @And("I verify the third convertible car")

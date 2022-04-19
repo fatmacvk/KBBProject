@@ -3,8 +3,8 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
-import static Utils.CommonMethods.*;
-import static Utils.CommonMethods.scrollDown;
+import static utility.CommonMethods.*;
+import static utility.CommonMethods.scrollDown;
 import static org.junit.Assert.assertEquals;
 import static steps.PageInitializer.bestCarsTitle;
 
@@ -23,11 +23,6 @@ public class bestFullSizeCarsSteps {
         click(bestCarsTitle.bestCars);
         scrollDown(700);
         Thread.sleep(2000);
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
     }
 
 

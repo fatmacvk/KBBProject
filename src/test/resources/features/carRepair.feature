@@ -1,8 +1,7 @@
 Feature:Car Repair
 
-  Background: chrome testing
 
-  @carTag
+  #@carTag
   Scenario: Verifying the carRepair submenus
 
     Given user hoover over CarRepair
@@ -12,7 +11,6 @@ Feature:Car Repair
     And user click Find an Auto Shop
     And user click Service & Repair Guide
     And user click OBD-II Codes
-
 
 
   @carTag

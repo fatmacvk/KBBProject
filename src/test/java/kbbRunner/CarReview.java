@@ -1,4 +1,4 @@
-package KBBRunner;
+package kbbRunner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -14,9 +14,9 @@ import org.junit.runner.RunWith;
             ,"json:target/cucumber.json"
             , "rerun:target/failed.txt"}
             ,monochrome=true
-            ,tags= "@sanity"
+            ,tags="@carReview"
 
     )
-    public class Sanity {
+    public class CarReview {
     }
 

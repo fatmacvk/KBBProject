@@ -1,7 +1,7 @@
-package Pages;
+package pages;
 
 
-import Utils.CommonMethods;
+import utility.CommonMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

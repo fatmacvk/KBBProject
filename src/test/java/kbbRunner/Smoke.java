@@ -1,4 +1,5 @@
-package KBBRunner;
+package kbbRunner;
+
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -13,8 +14,9 @@ import org.junit.runner.RunWith;
         ,"json:target/cucumber.json"
         , "rerun:target/failed.txt"}
         ,monochrome=true
-        ,tags= "@regression"
+        ,tags= "@smoke"
 
 )
-public class CarTag {
+public class Smoke {
 }
+
