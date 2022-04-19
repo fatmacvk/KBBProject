@@ -1,6 +1,6 @@
 package steps;
 
-import pages.*;
+import Pages.*;
 
 public class PageInitializer {
 

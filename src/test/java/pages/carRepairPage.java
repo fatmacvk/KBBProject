@@ -1,4 +1,4 @@
-package pages;
+package Pages;
 
 import utility.CommonMethods;
 import org.openqa.selenium.WebElement;
