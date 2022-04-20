@@ -1,6 +1,6 @@
 Feature:new User Guide
 
-    @sanity
+    @carReview
   Scenario: Verifying new user guide
 
 

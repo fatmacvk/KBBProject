@@ -1,12 +1,10 @@
 package steps;
 
 
-import Utils.CommonMethods;
+import utility.CommonMethods;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertTrue;
@@ -77,6 +75,7 @@ public class carValuesSteps extends CommonMethods {
         String actualStringforAuto = driver.findElement(By.xpath("//div[@id='overview']/div[1]/div/div/div[2]/div/div[1]/div/div/div[1]/h1")).getText();
         String expectedString = "2024 Chevrolet Blazer EV";
         assertTrue(actualStringforAuto.contains(expectedString));
+        System.out.println("I verified the selected car that user choose by model,zipcode and brand "+ actualStringforAuto);
     }
 }
 

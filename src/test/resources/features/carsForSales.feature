@@ -1,7 +1,6 @@
 Feature:cars for sale
 
-
-  @carTag
+  #@carTag
   Scenario: Verifying cars for sale
 
     When I hover on the cars for sale menu

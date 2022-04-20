@@ -1,6 +1,6 @@
 package Pages;
 
-import Utils.CommonMethods;
+import utility.CommonMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +10,7 @@ public class myKBBPage extends CommonMethods {
     @FindBy(xpath="//div[@id='app']/header/div/div[2]/label")
     public WebElement myKBBIcon;
 
-  //  @FindBy(xpath="//div[@id='app']/header/div/div[2]/div/div/a[1]")
+    //  @FindBy(xpath="//div[@id='app']/header/div/div[2]/div/div/a[1]")
     @FindBy(xpath = "//a[text()='Sign In']")
     public WebElement firstSignInButton;
 
@@ -31,8 +31,8 @@ public class myKBBPage extends CommonMethods {
 
     @FindBy(xpath="//div[@id='mountNode']//parent::p")
     public WebElement errorMessage2;
-  @FindBy(xpath="//div[@id='mountNode']//parent::p")
-  public WebElement errorMessage3;
+    @FindBy(xpath="//div[@id='mountNode']//parent::p")
+    public WebElement errorMessage3;
 
     @FindBy(xpath="/html/body/div[6]/div[2]/div")
     public WebElement popup;

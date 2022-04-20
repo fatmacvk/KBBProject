@@ -1,22 +1,26 @@
 package steps;
 
-import Utils.CommonMethods;
+
+import utility.CommonMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
+
 import static org.junit.Assert.assertTrue;
 
-public class reserachToolSteps extends CommonMethods{
 
 
-        @When("I hover on the research tools")
-        public void i_hover_on_the_research_tools() throws InterruptedException {
-            driver.manage().deleteAllCookies();
-            actionClass(reserachToolsTitle.researchTools);
-            driver.manage().deleteAllCookies();
-        }
+public class reserachToolSteps extends CommonMethods {
+
+
+    @When("I hover on the research tools")
+    public void i_hover_on_the_research_tools() throws InterruptedException {
+        driver.manage().deleteAllCookies();
+        actionClass(reserachToolsTitle.researchTools);
+        driver.manage().deleteAllCookies();
+    }
 
 
     @And("I click the car finder")
@@ -96,15 +100,10 @@ public class reserachToolSteps extends CommonMethods{
         driver.manage().deleteAllCookies();
         jsClick(reserachToolsTitle.recall);
         Thread.sleep(2000);
-        if(myKBBTitle.popup.isDisplayed()){
-            jsClick(myKBBTitle.popupexit);
-        }else{
-            System.out.println("popup is not displayed");
-        }
     }
     @When("I click the car research")
     public void i_click_the_car_research() {
-       jsClick(reserachToolsTitle.carResearch);
+        jsClick(reserachToolsTitle.carResearch);
     }
 
     @When("I select make to a new car")
@@ -112,9 +111,10 @@ public class reserachToolSteps extends CommonMethods{
         if(reserachToolsTitle.popup.isDisplayed()) {
             jsClick(reserachToolsTitle.popupexit);
         }
-            driver.switchTo().frame(reserachToolsTitle.iFrame);
+        driver.switchTo().frame(reserachToolsTitle.iFrame);
         selectDropdown(reserachToolsTitle.makeSelect, "Acura");
     }
+
 
     @When("I select model the car")
     public void i_select_model_the_car() {
@@ -137,14 +137,15 @@ public class reserachToolSteps extends CommonMethods{
     jsClick(reserachToolsTitle.FindDealers);
     }
 
+
     @Then("I verify the closest dealer")
     public void i_verify_the_closest_dealer() {
         String actualStringforResearch= driver.findElement(By.xpath("//div[@id='dealerInfo0']/div[2]/p[1]/b")).getText();
         String expectedString = "Acura Of Orange Park";
         assertTrue(actualStringforResearch.contains(expectedString));
+        System.out.println("I verified the closest dealer "+actualStringforResearch);
     }
 
 
 }
-
 

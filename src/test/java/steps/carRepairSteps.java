@@ -1,6 +1,6 @@
 package steps;
 
-import Utils.CommonMethods;
+import utility.CommonMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

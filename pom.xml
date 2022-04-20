@@ -65,14 +65,6 @@
             <version>3.8.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.4.0</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
@@ -105,7 +97,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <includes>
-                        <include>**/*KBBRunner.java</include>
+                        <include>**/*Sanity.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
@@ -114,7 +106,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>5.6.2</version>
+                <version>5.7.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>

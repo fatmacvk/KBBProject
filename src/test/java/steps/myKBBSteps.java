@@ -1,9 +1,13 @@
 package steps;
 
-import Utils.CommonMethods;
+import utility.CommonMethods;
 import io.cucumber.java.en.*;
+
+import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import static org.junit.Assert.assertTrue;
+
 
 
 public class myKBBSteps extends CommonMethods {
@@ -20,11 +24,19 @@ public class myKBBSteps extends CommonMethods {
     @When("user enters valid email and password")
     public void user_enters_valid_email_and_password() throws InterruptedException {
         driver.manage().deleteAllCookies();
+
+        if(myKBBTitle.popup.isDisplayed()){
+            jsClick(myKBBTitle.popupexit);
+//        }else{
+//            System.out.println("popup is not displayed");
+        }
+
 //        if(myKBBTitle.popup.isDisplayed()){
 //            jsClick(myKBBTitle.popupexit);
 //        }else{
 //            System.out.println("popup is not displayed");
 //        }
+
         sendText(myKBBTitle.emailInfo, "ummuhangenc14@gmail.com");
         Thread.sleep(2000);
         sendText(myKBBTitle.Password, "MyKBBProject2022*");
@@ -53,7 +65,11 @@ public class myKBBSteps extends CommonMethods {
 //            jsClick(myKBBTitle.popupexit);
 //        }else{
 //            System.out.println("popup is not displayed");
+
+        //      }
+
   //      }
+
         sendText(myKBBTitle.emailInfo, username);
         sendText(myKBBTitle.Password, password);
         Thread.sleep(6000);
@@ -64,6 +80,26 @@ public class myKBBSteps extends CommonMethods {
         jsClick(myKBBTitle.secondSignInButton);
     }
 
+
+    @Then("user see {string}")
+    public void userSee(String errMessage) throws InterruptedException {
+        String errorMsg = myKBBTitle.errorMessage1.getText();
+        System.out.println("actual error---" + errorMsg);
+        System.out.println("expected error---" + errMessage);
+        Assert.assertEquals("Error message is not displayed", errorMsg, errMessage);
+        Thread.sleep(2000);
+        String errorMsg2 = myKBBTitle.errorMessage2.getText();
+        System.out.println("actual error---" + errorMsg2);
+        System.out.println("expected error---" + errMessage);
+        Assert.assertEquals("Error message is not displayed", errorMsg2, errMessage);
+        Thread.sleep(2000);
+        String errorMsg3 = myKBBTitle.errorMessage3.getText();
+        System.out.println("actual error---" + errorMsg3);
+        System.out.println("expected error---" + errMessage);
+        Assert.assertEquals("Error message is not displayed", errorMsg3, errMessage);
+
+
+    }
     @Then("user are still on the login page")
     public void userAreStillOnTheLoginPage() throws InterruptedException {
         String actual1 = driver.findElement(By.xpath("//div[@id='mountNode']//parent::h1")).getText();
@@ -71,5 +107,4 @@ public class myKBBSteps extends CommonMethods {
         assertTrue(actual1.contains(expectedString1));
         Thread.sleep(2000);
     }
-
 }
