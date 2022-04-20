@@ -7,7 +7,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
+
 import static org.junit.Assert.assertTrue;
+
 
 
 public class reserachToolSteps extends CommonMethods {
@@ -113,6 +115,7 @@ public class reserachToolSteps extends CommonMethods {
         selectDropdown(reserachToolsTitle.makeSelect, "Acura");
     }
 
+
     @When("I select model the car")
     public void i_select_model_the_car() {
         selectDropdown(reserachToolsTitle.modelSelect, "ILX");
@@ -120,19 +123,20 @@ public class reserachToolSteps extends CommonMethods {
 
     @When("I select trim the car")
     public void i_select_trim_the_car() {
-        selectDropdown(reserachToolsTitle.trimSelect, "Premium Pkg");
+            selectDropdown(reserachToolsTitle.trimSelect, "Premium Pkg");
 
     }
 
     @When("I enter the zipcode")
     public void i_enter_the_zipcode() {
-        sendText(reserachToolsTitle.zipCode, "32092");
+    sendText(reserachToolsTitle.zipCode, "32092");
     }
 
     @When("I click the findDealer button")
     public void i_click_the_find_dealer_button() {
-        jsClick(reserachToolsTitle.FindDealers);
+    jsClick(reserachToolsTitle.FindDealers);
     }
+
 
     @Then("I verify the closest dealer")
     public void i_verify_the_closest_dealer() {

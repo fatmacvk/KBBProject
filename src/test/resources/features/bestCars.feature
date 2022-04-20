@@ -1,4 +1,5 @@
-Feature:Best Cars
+
+Feature: bestCars feature
 
   @sanity
   Scenario: Verifying the best cars
@@ -22,4 +23,4 @@ Feature:Best Cars
     And I click the best cars to see fullsize cars
     And I verify the first best fullsize car
     And I verify the second fullsize car
-    And I verify the third fullsize cargit
+    And I verify the third fullsize car

@@ -79,6 +79,14 @@
             <version>3.2.0</version>
         </dependency>
 
+
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.16</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -90,11 +98,8 @@
                 <configuration>
                     <includes>
                         <include>**/*Sanity.java</include>
-<!--                        <include>**/*CarReview.java</include>-->
-<!--                        <include>**/*CarTag.java</include>-->
-<!--                        <include>**/*Smoke.java</include>-->
                     </includes>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
 
